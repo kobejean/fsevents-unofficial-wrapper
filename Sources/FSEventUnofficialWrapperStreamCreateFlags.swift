@@ -14,7 +14,7 @@ public struct FSEventUnofficialWrapperStreamCreateFlags: OptionSet {
         self.rawValue = rawValue
     }
     fileprivate init(rawValue: Int) {
-        self.rawValue = FSEventStreamCreateFlags(truncatingBitPattern: rawValue)
+        self.rawValue = FSEventStreamCreateFlags(truncatingIfNeeded: rawValue)
     }
 }
 

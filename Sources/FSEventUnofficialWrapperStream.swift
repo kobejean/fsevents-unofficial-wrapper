@@ -89,14 +89,14 @@ public final class FSEventUnofficialWrapperStream {
             clientCallBackInfo: UnsafeMutableRawPointer?,
             numEvents: Int,
             eventPaths: UnsafeMutableRawPointer,
-            eventFlags: UnsafePointer<FSEventStreamEventFlags>?,
-            eventIds: UnsafePointer<FSEventStreamEventId>?) -> () in
+            eventFlags: UnsafePointer<FSEventStreamEventFlags>,
+            eventIds: UnsafePointer<FSEventStreamEventId>) -> () in
             guard let clientCallBackInfo1 = clientCallBackInfo else {
                 FSEventUnofficialWrapperStreamIllogicalErrorLog(code: .missingContextRawPointerValue).cast()
                 return
             }
             let eventPaths1: CFArray = Unmanaged.fromOpaque(eventPaths).takeUnretainedValue()
-            guard let eventPaths2 = eventPaths1 as NSArray as? [NSString] as? [String] else {
+            guard let eventPaths2 = eventPaths1 as NSArray as? [NSString] as [String]? else {
                 FSEventUnofficialWrapperStreamIllogicalErrorLog(code: .unexpectedPathValueType, message: "Cannot convert `\(eventPaths1)` into [String].").cast()
                 return
             }
@@ -108,13 +108,11 @@ public final class FSEventUnofficialWrapperStream {
             let self1 = unmanagedPtr.takeUnretainedValue()
             for i in 0..<numEvents {
                 let eventPath = eventPaths2[i]
-                let eventFlag = eventFlags?[i]
-                let eventFlag1 = eventFlag.flatMap({ FSEventUnofficialWrapperStreamEventFlags(rawValue: $0) })
-                let eventId = eventIds?[i]
-                let eventId1 = eventId.flatMap({ FSEventUnofficialWrapperStreamEventID(rawValue: $0) })
+                let eventFlag = FSEventUnofficialWrapperStreamEventFlags(rawValue: eventFlags[i])
+                let eventId = FSEventUnofficialWrapperStreamEventID(rawValue: eventIds[i])
                 let event = FSEventUnofficialWrapperStreamEvent(path: eventPath,
-                                                                flag: eventFlag1,
-                                                                ID: eventId1)
+                                                                flag: eventFlag,
+                                                                ID: eventId)
                 self1.handler(event)
             }
         }
@@ -235,7 +233,7 @@ extension FSEventUnofficialWrapperStream {
     @available(iOS, introduced: 6.0)
     public func copyPathsBeingWatched() -> [String] {
         let ret = FSEventStreamCopyPathsBeingWatched(rawref)
-        guard let paths = ret as NSArray as? [NSString] as? [String] else {
+        guard let paths = ret as NSArray as? [NSString] as [String]? else {
             FSEventUnofficialWrapperStreamIllogicalErrorLog(code: .unexpectedPathValueType, message: "Cannot convert retrieved object `\(ret)` into `[String]`.").cast()
             // Unrecoverable.
             fatalError()

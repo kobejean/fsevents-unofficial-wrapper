@@ -14,7 +14,7 @@ public struct FSEventUnofficialWrapperStreamEventID: Hashable {
         self.rawValue = rawValue
     }
     fileprivate init(rawValue: UInt) {
-        self.rawValue = FSEventStreamEventId(UInt32(truncatingBitPattern: rawValue))
+        self.rawValue = FSEventStreamEventId(UInt32(truncatingIfNeeded: rawValue))
     }
     public var hashValue: Int {
         return rawValue.hashValue
