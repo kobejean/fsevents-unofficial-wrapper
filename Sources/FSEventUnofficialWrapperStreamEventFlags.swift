@@ -43,7 +43,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * There was some change in the directory at the specific path
      * supplied in this event.
      */
-    public static var none: FSEventUnofficialWrapperStreamEventFlags {
+    static var none: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagNone)
     }
 
@@ -60,7 +60,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * kFSEventStreamEventFlagUserDropped or
      * kFSEventStreamEventFlagKernelDropped.
      */
-    public static var mustScanSubDirs: FSEventUnofficialWrapperStreamEventFlags {
+    static var mustScanSubDirs: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagMustScanSubDirs)
     }
 
@@ -77,7 +77,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * kFSEventStreamEventFlagMustScanSubDirs flag; these flags (if
      * present) only provide information to help you diagnose the problem.
      */
-    public static var userDropped: FSEventUnofficialWrapperStreamEventFlags {
+    static var userDropped: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagUserDropped)
     }
 
@@ -94,7 +94,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * kFSEventStreamEventFlagMustScanSubDirs flag; these flags (if
      * present) only provide information to help you diagnose the problem.
      */
-    public static var kernelDropped: FSEventUnofficialWrapperStreamEventFlags {
+    static var kernelDropped: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagKernelDropped)
     }
 
@@ -104,7 +104,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * previously-issued event ID's are no longer valid arguments for the
      * sinceWhen parameter of the FSEventStreamCreate...() functions.
      */
-    public static var idsWrapped: FSEventUnofficialWrapperStreamEventFlags {
+    static var idsWrapped: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagEventIdsWrapped)
     }
 
@@ -119,7 +119,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * kFSEventStreamEventFlagHistoryDone flag is set. The client should
      * ignore the path supplied in this callback.
      */
-    public static var historyDone: FSEventUnofficialWrapperStreamEventFlags {
+    static var historyDone: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagHistoryDone)
     }
 
@@ -134,7 +134,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * kFSEventStreamCreateFlagWatchRoot to FSEventStreamCreate...() when
      * you created the stream.
      */
-    public static var rootChanged: FSEventUnofficialWrapperStreamEventFlags {
+    static var rootChanged: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagRootChanged)
     }
 
@@ -151,7 +151,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * aware of the MNT_DONTBROWSE flag that is set for volumes which
      * should not be displayed by user interface elements.
      */
-    public static var mount: FSEventUnofficialWrapperStreamEventFlags {
+    static var mount: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagMount)
     }
 
@@ -166,7 +166,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * unmounting a volume could uncover an arbitrarily large directory
      * hierarchy, although Mac OS X never does that.
      */
-    public static var unmount: FSEventUnofficialWrapperStreamEventFlags {
+    static var unmount: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagUnmount)
     }
 
@@ -175,7 +175,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemCreated: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemCreated: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemCreated)
     }
 
@@ -184,7 +184,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemRemoved: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemRemoved: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemRemoved)
     }
 
@@ -193,7 +193,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemInodeMetaMod: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemInodeMetaMod: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemInodeMetaMod)
     }
 
@@ -202,7 +202,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemRenamed: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemRenamed: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemRenamed)
     }
 
@@ -211,7 +211,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemModified: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemModified: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemModified)
     }
 
@@ -220,7 +220,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemFinderInfoMod: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemFinderInfoMod: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemFinderInfoMod)
     }
 
@@ -229,7 +229,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemChangeOwner: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemChangeOwner: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemChangeOwner)
     }
 
@@ -238,7 +238,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemXattrMod: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemXattrMod: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemXattrMod)
     }
 
@@ -247,7 +247,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemIsFile: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemIsFile: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemIsFile)
     }
 
@@ -256,7 +256,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemIsDir: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemIsDir: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemIsDir)
     }
 
@@ -265,7 +265,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.7, *)
-    public static var itemIsSymlink: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemIsSymlink: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemIsSymlink)
     }
 
@@ -274,7 +274,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the MarkSelf flag when creating the stream.)
      */
     @available(OSX 10.9, *)
-    public static var ownEvent: FSEventUnofficialWrapperStreamEventFlags {
+    static var ownEvent: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagOwnEvent)
     }
     
@@ -283,7 +283,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.10, *)
-    public static var itemIsHardlink: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemIsHardlink: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemIsHardlink)
     }
     
@@ -291,7 +291,7 @@ public extension FSEventUnofficialWrapperStreamEventFlags {
      * (This flag is only ever set if you specified the FileEvents flag when creating the stream.)
      */
     @available(OSX 10.10, *)
-    public static var itemIsLastHardlink: FSEventUnofficialWrapperStreamEventFlags {
+    static var itemIsLastHardlink: FSEventUnofficialWrapperStreamEventFlags {
         return FSEventUnofficialWrapperStreamEventFlags(rawValue: kFSEventStreamEventFlagItemIsLastHardlink)
     }
 

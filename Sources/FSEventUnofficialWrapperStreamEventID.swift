@@ -16,16 +16,13 @@ public struct FSEventUnofficialWrapperStreamEventID: Hashable {
     fileprivate init(rawValue: UInt) {
         self.rawValue = FSEventStreamEventId(UInt32(truncatingIfNeeded: rawValue))
     }
-    public var hashValue: Int {
-        return rawValue.hashValue
-    }
 }
 public func == (a: FSEventUnofficialWrapperStreamEventID, b: FSEventUnofficialWrapperStreamEventID) -> Bool {
     return a.rawValue == b.rawValue
 }
 
 public extension FSEventUnofficialWrapperStreamEventID {
-    public static var now: FSEventUnofficialWrapperStreamEventID {
+    static var now: FSEventUnofficialWrapperStreamEventID {
         return FSEventUnofficialWrapperStreamEventID(rawValue: kFSEventStreamEventIdSinceNow)
     }
     /*
@@ -46,7 +43,7 @@ public extension FSEventUnofficialWrapperStreamEventID {
      */
     @available(macOS, introduced: 10.5)
     @available(iOS, introduced: 6.0)
-    public static func getCurrentEventId() -> FSEventUnofficialWrapperStreamEventID {
+    static func getCurrentEventId() -> FSEventUnofficialWrapperStreamEventID {
         let eventId = FSEventsGetCurrentEventId()
         return FSEventUnofficialWrapperStreamEventID(rawValue: eventId)
     }

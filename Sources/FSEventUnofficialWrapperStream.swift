@@ -378,7 +378,7 @@ extension FSEventUnofficialWrapperStream {
      *    Non-Carbon CFM:   not available
      */
     @available(OSX 10.5, *)
-    public func scheduleWithRunloop(runLoop: RunLoop, runLoopMode: RunLoopMode) {
+    public func scheduleWithRunloop(runLoop: RunLoop, runLoopMode: RunLoop.Mode) {
         let runLoopMode1 = runLoopMode as CFString
         FSEventStreamScheduleWithRunLoop(rawref, runLoop.getCFRunLoop(), runLoopMode1)
     }
@@ -407,7 +407,7 @@ extension FSEventUnofficialWrapperStream {
      *    Non-Carbon CFM:   not available
      */
     @available(OSX 10.5, *)
-    public func unscheduleFromRunLoop(runLoop: RunLoop, runLoopMode: RunLoopMode) {
+    public func unscheduleFromRunLoop(runLoop: RunLoop, runLoopMode: RunLoop.Mode) {
         let runLoopMode1 = runLoopMode as CFString
         FSEventStreamUnscheduleFromRunLoop(rawref, runLoop.getCFRunLoop(), runLoopMode1)
     }

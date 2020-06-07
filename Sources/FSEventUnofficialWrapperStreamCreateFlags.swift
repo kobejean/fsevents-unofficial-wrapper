@@ -35,7 +35,7 @@ public extension FSEventUnofficialWrapperStreamCreateFlags {
     /*
      * The default.
      */
-    public static var none: FSEventUnofficialWrapperStreamCreateFlags {
+    static var none: FSEventUnofficialWrapperStreamCreateFlags {
         return FSEventUnofficialWrapperStreamCreateFlags(rawValue: kFSEventStreamCreateFlagNone)
     }
 
@@ -66,7 +66,7 @@ public extension FSEventUnofficialWrapperStreamCreateFlags {
      * seconds. This is the default behavior and is more appropriate for
      * background, daemon or batch processing apps.
      */
-    public static var noDefer: FSEventUnofficialWrapperStreamCreateFlags {
+    static var noDefer: FSEventUnofficialWrapperStreamCreateFlags {
         return FSEventUnofficialWrapperStreamCreateFlags(rawValue: kFSEventStreamCreateFlagNoDefer)
     }
 
@@ -85,7 +85,7 @@ public extension FSEventUnofficialWrapperStreamCreateFlags {
      * before creating the stream so that you have a file descriptor for
      * it and can issue an F_GETPATH fcntl() to find the current path.
      */
-    public static var watchRoot: FSEventUnofficialWrapperStreamCreateFlags {
+    static var watchRoot: FSEventUnofficialWrapperStreamCreateFlags {
         return FSEventUnofficialWrapperStreamCreateFlags(rawValue: kFSEventStreamCreateFlagWatchRoot)
     }
 
@@ -101,7 +101,7 @@ public extension FSEventUnofficialWrapperStreamCreateFlags {
      */
     @available(macOS, introduced: 10.6)
     @available(iOS, introduced: 6.0)
-    public static var ignoreSelf: FSEventUnofficialWrapperStreamCreateFlags {
+    static var ignoreSelf: FSEventUnofficialWrapperStreamCreateFlags {
         return FSEventUnofficialWrapperStreamCreateFlags(rawValue: kFSEventStreamCreateFlagIgnoreSelf)
     }
 
@@ -113,7 +113,7 @@ public extension FSEventUnofficialWrapperStreamCreateFlags {
      */
     @available(macOS, introduced: 10.7)
     @available(iOS, introduced: 6.0)
-    public static var fileEvents: FSEventUnofficialWrapperStreamCreateFlags {
+    static var fileEvents: FSEventUnofficialWrapperStreamCreateFlags {
         return FSEventUnofficialWrapperStreamCreateFlags(rawValue: kFSEventStreamCreateFlagFileEvents)
     }
 
@@ -126,7 +126,7 @@ public extension FSEventUnofficialWrapperStreamCreateFlags {
      */
     @available(macOS, introduced: 10.9)
     @available(iOS, introduced: 7.0)
-    public static var markSelf: FSEventUnofficialWrapperStreamCreateFlags {
+    static var markSelf: FSEventUnofficialWrapperStreamCreateFlags {
         return FSEventUnofficialWrapperStreamCreateFlags(rawValue: kFSEventStreamCreateFlagMarkSelf)
     }
 }
